@@ -2,7 +2,7 @@ package day230719;
 
 import java.util.Scanner;
 
-public class ex4
+public class ex17
 {
 	/*
 	 * 230719

@@ -2,7 +2,7 @@ package day230719;
 
 import java.util.Scanner;
 
-public class UpperLower
+public class ex13
 {
 	// ex1 첫글자
 //	public static void main(String[] args)

@@ -1,6 +1,6 @@
 package day230719;
 
-public class 구구단3
+public class ex11_3
 {
 	public static void main(String[] args)
 	{

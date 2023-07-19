@@ -2,7 +2,7 @@ package day230718;
 
 import java.util.Scanner;
 
-public class 단어_자음_모음_개수
+public class ex9
 {
 	public static void main(String[] args)
 	{

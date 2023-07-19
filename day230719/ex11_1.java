@@ -2,7 +2,7 @@ package day230719;
 
 import java.util.Scanner;
 
-public class 구구단1
+public class ex11_1
 {
 	public static void main(String[] args)
 	{

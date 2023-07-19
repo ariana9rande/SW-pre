@@ -2,7 +2,7 @@ package day230718;
 
 import java.util.Scanner;
 
-public class 첫글자_대소문자_판별
+public class ex8
 {
 	public static void main(String[] args)
 	{

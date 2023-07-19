@@ -2,7 +2,7 @@ package day230719;
 
 import java.util.Scanner;
 
-public class ReverseStr
+public class ex12
 {
 	public static void main(String[] args)
 	{

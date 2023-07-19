@@ -2,7 +2,7 @@ package day230719;
 
 import java.util.ArrayList;
 
-public class ex1
+public class ex14
 {
 	public static void main(String[] args)
 	{

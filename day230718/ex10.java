@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class SSN
+public class ex10
 {
 	public static void main(String[] args)
 	{
