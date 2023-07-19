@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ex17
 {
 	/*
-	 * 230719
 	 * while, Scanner 이용하여 예금, 출금, 조회, 종료기능
 	 * switch-case이용
 	 * 1 입력 : 예금액 증가

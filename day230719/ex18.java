@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ex18
 {
 	/*
-	 * 230719
 	 * 간단한 계산기를 구현하는 프로그램을 작성
 	 * 연산자와 피연산자 2개를 입력받은 후 결과를 출력
 	 * ex) + 3 8 -> 11

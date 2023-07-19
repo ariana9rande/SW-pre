@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ex16
 {
 	/*
-	 * 230719
 	 * n명의 점수를 입력받은 후, 평균을 출력하고, 평균을 가로막대 그래프(***)로 표현
 	 * ex) 평균이 88이면 * 8개 출력
 	 */
