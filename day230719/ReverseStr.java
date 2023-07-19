@@ -10,18 +10,18 @@ public class ReverseStr
 		
 		System.out.print("input : ");
 		String str = sc.nextLine();
-		String result = "";
+//		String result = "";
+//		
+//		System.out.print("output : ");
+//		for(int i = str.length() - 1; i >= 0; i--)
+//		{
+//			result += str.charAt(i);
+//		}
+//		
+//		System.out.println(result);
 		
 		System.out.print("output : ");
 		for(int i = str.length() - 1; i >= 0; i--)
-		{
-			result += str.charAt(i);
-		}
-		
-		System.out.println(result);
-		
-//		System.out.print("output : ");
-//		for(int i = str.length() - 1; i >= 0; i--)
-//			System.out.print(str.charAt(i));
+			System.out.print(str.charAt(i));
 	}
 }
