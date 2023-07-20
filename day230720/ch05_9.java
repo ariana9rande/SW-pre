@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class ch05_9
 {
+	/*
+	 * ch05 연습문제 9번
+	 */
 	public static void main(String[] args)
 	{
 		Scanner sc = new Scanner(System.in);
