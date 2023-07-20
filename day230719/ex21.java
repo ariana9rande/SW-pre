@@ -1,6 +1,6 @@
 package day230719;
 
-public class p138_4
+public class ex21
 {
 	/*
 	 * 4. while과 Math.random() 이용해서 두 개의 주사위를 던진 결과를 (눈1, 눈2) 형태로 출력
