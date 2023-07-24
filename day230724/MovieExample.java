@@ -23,7 +23,7 @@ public class MovieExample
 		
 		for(int i = 0; i < arr.length; i++)
 		{
-			System.out.println(arr[i].name + ", " + arr[i].director);
+			System.out.print("{ " + arr[i].name + ", " + arr[i].director + " } ");
 		}
 	}
 }
