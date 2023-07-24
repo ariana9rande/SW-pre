@@ -18,7 +18,7 @@ public class WeekExample2
 					case 2 -> Week.MONDAY;
 					case 3 -> Week.TUESDAY;
 					case 4 -> Week.WEDNESDAY;
-					case 5 -> Week.THURSDAY;
+					case 5 -> Week.THURSDAY; 
 					case 6 -> Week.FRIDAY;
 					case 7 -> Week.SATURDAY;
 					default -> null;
