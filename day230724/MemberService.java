@@ -29,18 +29,14 @@ public class MemberService
 	public Member search(String id)
 	{
 		Member member = new Member();
-		boolean check = false;
-
+		
 		for (int i = 0; i < members.size(); i++)
 			if (members.get(i).getId().equals(id))
 			{
 				member = members.get(i);
-				check = true;
+				return member;
 			}
-		if (check)
-			return member;
-		else
-			return null;
+		return null;
 	}
 
 	public boolean login(String id, String password)
