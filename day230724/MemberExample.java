@@ -17,9 +17,9 @@ public class MemberExample
 			System.out.println("1.로그인  2.추가  3.삭제  4.조회  5.종료");
 
 			System.out.print("선택> ");
-			int input = Integer.parseInt(sc.nextLine());
+			String input = sc.nextLine();
 
-			if (input == 1)
+			if (input.equals("1"))
 			{
 				System.out.print("id : ");
 				String login_id = sc.nextLine();
@@ -33,7 +33,7 @@ public class MemberExample
 					System.out.println("id/password가 잘못되었습니다.");
 				System.out.println();
 			}
-			else if (input == 2)
+			else if (input.equals("2"))
 			{
 				System.out.print("name : ");
 				String name = sc.nextLine();
@@ -50,7 +50,7 @@ public class MemberExample
 				memberService.join(name, id, password, age);
 				System.out.println();
 			}
-			else if (input == 3)
+			else if (input.equals("3"))
 			{
 				System.out.print("삭제시킬 member의 id : ");
 				String delete_id = sc.nextLine();
@@ -58,7 +58,7 @@ public class MemberExample
 				memberService.delete(delete_id);
 				System.out.println();
 			}
-			else if (input == 4)
+			else if (input.equals("4"))
 			{
 				if (memberService.members.size() != 0)
 					for (Member m : memberService.members)
@@ -68,7 +68,7 @@ public class MemberExample
 					System.out.println("member가 존재하지 않습니다.");
 				System.out.println();
 			}
-			else if (input == 5)
+			else if (input.equals("5"))
 			{
 				System.out.println("프로그램 종료");
 				run = false;
