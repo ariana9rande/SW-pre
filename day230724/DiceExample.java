@@ -10,7 +10,7 @@ public class DiceExample
 			Dice d2 = new Dice();
 			
 			if(d1.getNum() + d2.getNum() == 10)
-				System.out.print("*");
+				System.out.print("*"); 
 			System.out.println("(" + d1.getNum() + ", " + d2.getNum() + ")");
 		}
 	}

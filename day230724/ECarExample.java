@@ -15,6 +15,7 @@ public class ECarExample
 			System.out.println("1.차 상태 조회 | 2.주행 | 3.충전 | 4.종료");
 			System.out.println("-----------------------------------");
 			
+			System.out.print("선택> ");
 			int input = sc.nextInt();
 			
 			if(input == 1)
