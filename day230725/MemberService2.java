@@ -6,7 +6,6 @@ public class MemberService2
 {
 	Member[] members = new Member[5];
 	int index = 0;
-	boolean init = false;
 	
 	public boolean joinCheck()
 	{
