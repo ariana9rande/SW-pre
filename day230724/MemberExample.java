@@ -17,15 +17,15 @@ public class MemberExample
 			System.out.println("1.로그인  2.추가  3.삭제  4.조회  5.종료");
 
 			System.out.print("선택> ");
-			String input = sc.nextLine();
+			String input = sc.next();
 
 			if (input.equals("1"))
 			{
 				System.out.print("id : ");
-				String login_id = sc.nextLine();
+				String login_id = sc.next();
 
 				System.out.print("password : ");
-				String login_password = sc.nextLine();
+				String login_password = sc.next();
 
 				if (memberService.login(login_id, login_password))
 					System.out.println(login_id + " 로그인 성공");
@@ -36,16 +36,16 @@ public class MemberExample
 			else if (input.equals("2"))
 			{
 				System.out.print("name : ");
-				String name = sc.nextLine();
+				String name = sc.next();
 
 				System.out.print("id : ");
-				String id = sc.nextLine();
+				String id = sc.next();
 
 				System.out.print("password : ");
-				String password = sc.nextLine();
+				String password = sc.next();
 
 				System.out.print("age : ");
-				int age = Integer.parseInt(sc.nextLine());
+				int age = Integer.parseInt(sc.next());
 
 				memberService.join(name, id, password, age);
 				System.out.println();
@@ -53,7 +53,7 @@ public class MemberExample
 			else if (input.equals("3"))
 			{
 				System.out.print("삭제시킬 member의 id : ");
-				String delete_id = sc.nextLine();
+				String delete_id = sc.next();
 
 				memberService.delete(delete_id);
 				System.out.println();
