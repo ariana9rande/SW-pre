@@ -22,5 +22,7 @@ public class StringBuilderReverse
 		}
 		
 		System.out.println(arr);
+		
+		sc.close();
 	}
 }
