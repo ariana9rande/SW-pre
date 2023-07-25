@@ -2,7 +2,7 @@ package day230724;
 
 import java.util.Scanner;
 
-public class MemberExample
+public class MemberTest
 {
 	public static void main(String[] args)
 	{
@@ -11,9 +11,9 @@ public class MemberExample
 		Scanner sc = new Scanner(System.in);
 		boolean run = true;
 
-		while (run == true)
+		while (run)
 		{
-			System.out.println("** 회원 관리 프로그램 **");
+			System.out.println("** 회원 관리 프로그램 ** ArrayList ver.");
 			System.out.println("1.로그인  2.추가  3.삭제  4.조회  5.종료");
 
 			System.out.print("선택> ");
@@ -60,13 +60,7 @@ public class MemberExample
 			}
 			else if (input.equals("4"))
 			{
-				if (memberService.members.size() != 0)
-					for (Member m : memberService.members)
-						System.out.println(m.getName() + ", " + m.getId() + 
-								", " + m.getPassword() + ", " + m.getAge());
-				else
-					System.out.println("member가 존재하지 않습니다.");
-				System.out.println();
+				memberService.printMembers();
 			}
 			else if (input.equals("5"))
 			{

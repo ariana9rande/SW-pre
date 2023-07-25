@@ -73,4 +73,15 @@ public class MemberService
 		else
 			System.out.println("해당 id의 멤버가 없습니다.");
 	}
+	
+	public void printMembers()
+	{
+		if (members.size() != 0)
+			for (Member m : members)
+				System.out.println(m.getName() + ", " + m.getId() + 
+						", " + m.getPassword() + ", " + m.getAge());
+		else
+			System.out.println("member가 존재하지 않습니다.");
+		System.out.println();
+	}
 }
