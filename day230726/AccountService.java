@@ -2,7 +2,7 @@ package day230726;
 
 public class AccountService
 {
-	Account[] accounts = new Account[5];
+	Account[] accounts = new Account[100];
 	int accountsIndex = 0;
 
 	public void generateAccount()
@@ -106,8 +106,7 @@ public class AccountService
 			}
 			// 출금 계좌의 잔액이 부족한 경우
 			else if (account.getBalance() < money)
-				System.out
-						.println("이체 실패, 잔액이 부족합니다.\n" + account.getAccountNum() + " 현재 잔액 : " + account.getBalance());
+				System.out.println("이체 실패, 잔액이 부족합니다.\n" + account.getAccountNum() + " 현재 잔액 : " + account.getBalance());
 			// 이체 후 잔액이 범위를 초과할 경우
 			else if (account2.getBalance() + money > 1000000)
 				System.out.println("이체 실패, 이체 후 잔액이 1,000,000원을 초과합니다.\n" + account2.getAccountNum() + " 현재 잔액 : "
