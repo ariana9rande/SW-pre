@@ -33,7 +33,6 @@ public class test
 	{
 		for (int i = 0; i < arr.size(); i++)
 		{
-
 			// 같은 동물이 앉아 있는 경우
 			if (chairs.contains(arr.get(i)))
 			{
@@ -59,8 +58,7 @@ public class test
 				else
 				{
 					// 가장 앉은 지 오래된 자리를 temp에 대입하고 삭제
-					int temp = indexes.get(0);
-					indexes.remove(0);
+					int temp = indexes.remove(0);
 					// 새로운 동물을 앉히고 해당 자리를 indexes에 추가해서 최근에 앉은 자리로 설정
 					chairs.set(temp, arr.get(i));
 					indexes.add(temp);

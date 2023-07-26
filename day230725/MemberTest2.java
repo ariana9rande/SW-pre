@@ -2,8 +2,6 @@ package day230725;
 
 import java.util.Scanner;
 
-import day230724.Member;
-
 public class MemberTest2
 {
 	public static void main(String[] args)
