@@ -2,7 +2,7 @@ package day230726;
 
 public class AccountService
 {
-	Account[] accounts = new Account[100];
+	Account[] accounts = new Account[5];
 	int accountsIndex = 0;
 
 	public void generateAccount()
@@ -21,6 +21,10 @@ public class AccountService
 			accountsIndex++;
 			System.out.println(accountNum + " 계좌 생성 완료");
 		}
+		else if (search(accountNum) != null)
+			System.out.println("계좌 생성 실패. 중복 계좌번호");
+		else
+			System.out.println("계좌 생성 실패. 계좌 개수 제한 초과");
 	}
 
 	// 배열에서 계좌번호를 찾으면 Account, 못 찾으면 null 리턴
