@@ -19,7 +19,7 @@ public abstract class Customer
 	
 	public String showCustomerInfo()
 	{
-		return customerID + ", " + customerName + "(" + customerGrade + ")";
+		return customerID + ", " + customerName + "(" + customerGrade.toUpperCase() + ")";
 	}
 	
 	public int getCustomerID()
