@@ -9,7 +9,6 @@ public class RemoteControlExample
 		rc = new Television();
 		rc.turnOn();
 		rc.setVolume(11);
-		rc.turnOff();
 		
 		rc.setMute(true);
 		rc.setMute(false);
