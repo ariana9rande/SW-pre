@@ -6,23 +6,18 @@ public abstract class Employee
 	private int id;
 	private String position;
 	
-	public Employee()
-	{
-		
-	}
-	
 	public Employee(String name, int id, String position)
 	{
 		this.name = name;
 		this.id = id;
-		this.setPosition(position);
+		this.position = position;
 	}
 	
 	public abstract int computeSalary();
 	
 	public String toString()
 	{
-		return name + "(" + getPosition() + ", " + id + ")"; 
+		return name + "(" + position + ", " + id + ")"; 
 	}
 
 	public String getName()
