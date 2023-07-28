@@ -23,7 +23,7 @@ public class VIPCustomer extends Customer
 	@Override
 	public String showCustomerInfo()
 	{
-		return customerID + ", " + customerName + "(" + customerGrade.toUpperCase() + ") - " + agentID;
+		return super.showCustomerInfo() + " - " + agentID;
 	}
 	
 	public double getBonusRatio()
