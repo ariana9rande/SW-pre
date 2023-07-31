@@ -26,10 +26,8 @@ public class CD
 		return CDTitle;
 	}
 
-	public void setCDTitle(String cDTitle)
+	public void setCDTitle(String CDTitle)
 	{
-		CDTitle = cDTitle;
+		this.CDTitle = CDTitle;
 	}
-	
-	
 }
