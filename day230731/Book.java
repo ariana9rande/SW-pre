@@ -118,7 +118,7 @@ public class Book implements Lendable
 	{
 		String str = "청구번호 : " + requestNo + " 제목 : " + bookTitle + " 저자 : " + writer;
 		if(this.state)
-			str += " 대출자 : " + this.borrower;
+			str += " 대출자 : " + this.borrower + " 대출일자 : " + this.checkOutDate;
 		return str;
 	}
 }

@@ -204,10 +204,12 @@ public class LendableService
 
 			if(searchBookByTitle(title) != null)
 			{
+				String borrower = searchBookByTitle(title).getBorrower();
+
 				if(searchBookByTitle(title).checkIn())
 				{
-					searchMemberByName(searchBookByTitle(title).getBorrower()).setState(false);
-					searchMemberByName(searchBookByTitle(title).getBorrower()).setBook(null);
+					searchMemberByName(borrower).setState(false);
+					searchMemberByName(borrower).setBook(null);
 				}
 			}
 			else
@@ -220,10 +222,12 @@ public class LendableService
 
 			if(searchCDByTitle(title) != null)
 			{
+				String borrower = searchCDByTitle(title).getBorrower();
+
 				if(searchCDByTitle(title).checkIn())
 				{
-					searchMemberByName(searchCDByTitle(title).getBorrower()).setState(false);
-					searchMemberByName(searchCDByTitle(title).getBorrower()).setBook(null);
+					searchMemberByName(borrower).setState(false);
+					searchMemberByName(borrower).setCD(null);
 				}
 			}
 			else

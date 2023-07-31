@@ -82,7 +82,7 @@ public class AppCD extends CD implements Lendable
 	{
 		String str = "등록번호 : " + getRegisterNo() + " 제목 : " + getCDTitle();
 		if(this.state)
-			str += " 대출자 : " + this.borrower;
+			str += " 대출자 : " + this.borrower + " 대출일자 : " + this.checkOutDate;
 		return str;
 	}
 }
