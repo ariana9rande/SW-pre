@@ -17,53 +17,40 @@ public class Book implements Lendable
 		this.state = false;
 	}
 
-	LendableService lendableService = new LendableService();
-
 	@Override
-	public void checkOut(String borrower, String checkOutDate)
+	public boolean checkOut(String borrower, String checkOutDate)
 	{
-		Member member = lendableService.searchMemberByName(borrower);
-		
-		if(member == null)
-			System.out.println(member);
-		
 		if(state)
+		{
 			System.out.println("대출 실패. " + bookTitle + "는(은) 이미 대출 중입니다.");
-		else if(member != null && member.getState())
-			System.out.println("대출 실패. " + borrower + "는(은) 이미 대출 중인 회원입니다.");
+			return false;
+		}
 		else
 		{
 			this.state = true;
 			this.borrower = borrower;
 			this.checkOutDate = checkOutDate;
-			if(member != null)
-			{
-				
-				member.setBook(this);
-				member.setState(true);
-			}
 			System.out.println("제목 : " + bookTitle + ", 대출자 : " + borrower + ", 대출일 : " + checkOutDate + " 대출 처리 되었습니다.");
+			return true;
 		}
-		System.out.println();
 	}
 
 	@Override
-	public void checkIn()
+	public boolean checkIn()
 	{
-		Member member = lendableService.searchMemberByName(borrower);
-
 		if(!state)
+		{
 			System.out.println("반납 실패. " + bookTitle + "는(은) 대출중이 아닙니다.");
+			return false;
+		}
 		else
 		{
-			member.setBook(null);
-			member.setState(false);
 			this.state = false;
 			this.borrower = null;
 			this.checkOutDate = null;
 			System.out.println("제목 : " + bookTitle + " 반납 처리 되었습니다.");
+			return true;
 		}
-		System.out.println();
 	}
 
 	public String getRequestNo()

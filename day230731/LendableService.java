@@ -143,7 +143,7 @@ public class LendableService
 		DateTimeFormatter formattedToday = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String checkOutDate = today.format(formattedToday);
 
-		if(searchMemberByName(borrower) != null)
+		if(searchMemberByName(borrower) != null && !searchMemberByName(borrower).getState())
 		{
 			System.out.print("책, CD 선택(1, 2) : ");
 			int input = Integer.parseInt(sc.nextLine());
@@ -154,7 +154,13 @@ public class LendableService
 				String title = sc.nextLine();
 
 				if(searchBookByTitle(title) != null)
-					searchBookByTitle(title).checkOut(borrower, checkOutDate);
+				{
+					if(searchBookByTitle(title).checkOut(borrower, checkOutDate))
+					{
+						searchMemberByName(borrower).setState(true);
+						searchMemberByName(borrower).setBook(searchBookByTitle(title));
+					}
+				}
 				else
 					System.out.println("해당 제목의 책을 찾을 수 없습니다.");
 			}
@@ -164,13 +170,21 @@ public class LendableService
 				String title = sc.nextLine();
 
 				if(searchCDByTitle(title) != null)
-					searchCDByTitle(title).checkOut(borrower, checkOutDate);
+				{
+					if(searchCDByTitle(title).checkOut(borrower, checkOutDate))
+					{
+						searchMemberByName(borrower).setState(true);
+						searchMemberByName(borrower).setCD(searchCDByTitle(title));
+					}
+				}
 				else
 					System.out.println("해당 제목의 CD를 찾을 수 없습니다.");
 			}
 		}
-		else
+		else if(searchMemberByName(borrower) == null)
 			System.out.println("해당 이름의 회원을 찾을 수 없습니다.");
+		else if(searchMemberByName(borrower).getState())
+			System.out.println(borrower + "는(은) 이미 대출 중인 회원입니다.");
 		System.out.println();
 	}
 
@@ -189,7 +203,13 @@ public class LendableService
 			String title = sc.nextLine();
 
 			if(searchBookByTitle(title) != null)
-				searchBookByTitle(title).checkIn();
+			{
+				if(searchBookByTitle(title).checkIn())
+				{
+					searchMemberByName(searchBookByTitle(title).getBorrower()).setState(false);
+					searchMemberByName(searchBookByTitle(title).getBorrower()).setBook(null);
+				}
+			}
 			else
 				System.out.println("해당 제목의 책을 찾을 수 없습니다.");
 		}
@@ -199,7 +219,13 @@ public class LendableService
 			String title = sc.nextLine();
 
 			if(searchCDByTitle(title) != null)
-				searchCDByTitle(title).checkIn();
+			{
+				if(searchCDByTitle(title).checkIn())
+				{
+					searchMemberByName(searchCDByTitle(title).getBorrower()).setState(false);
+					searchMemberByName(searchCDByTitle(title).getBorrower()).setBook(null);
+				}
+			}
 			else
 				System.out.println("해당 제목의 CD를 찾을 수 없습니다.");
 		}

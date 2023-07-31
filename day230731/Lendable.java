@@ -2,6 +2,6 @@ package day230731;
 
 public interface Lendable
 {
-	void checkOut(String borrower, String checkOutDate);
-	void checkIn();
+	boolean checkOut(String borrower, String checkOutDate);
+	boolean checkIn();
 }
