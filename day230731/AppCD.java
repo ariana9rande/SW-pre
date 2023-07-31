@@ -21,15 +21,18 @@ public class AppCD extends CD implements Lendable
 		
 		if(state)
 			System.out.println("대출 실패. " + getCDTitle() + "는(은) 이미 대출 중입니다.");
-		else if(member.getState())
+		else if(member != null && member.getState())
 			System.out.println("대출 실패. " + borrower + "는(은) 이미 대출 중인 회원입니다.");
 		else
 		{
 			this.state = true;
 			this.borrower = borrower;
 			this.checkOutDate = checkOutDate;
-			member.setCD(this);
-			member.setState(true);
+			if(member != null)
+			{
+				member.setCD(this);
+				member.setState(true);
+			}
 			System.out.println("제목 : " + getCDTitle() + ", 대출자 : " + borrower + ", 대출일 : " + checkOutDate + " 대출 처리 되었습니다.");
 		}
 		System.out.println();
