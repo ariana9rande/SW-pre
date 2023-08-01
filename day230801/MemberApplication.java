@@ -39,7 +39,7 @@ public class MemberApplication
 				case 4 ->
 				{
 					System.out.println("프로그램 종료");
-					run = false;
+					run = false; 
 					break;
 				}
 			}

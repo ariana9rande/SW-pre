@@ -36,4 +36,13 @@ public class Member
 	{
 		return name + " 회원님의 아이디는 " + id + "입니다.";
 	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if(obj instanceof Member target)
+			if(id == (target.getId()))
+				return true;
+		return false;
+	}
 }

@@ -45,9 +45,13 @@ public class MemberService
 
 	public Member searchById(int id)
 	{
-		for(Member m : members)
-			if(m.getId() == id)
-				return m;
+		Iterator<Member> members_itr = members.iterator();
+		while(members_itr.hasNext())
+		{
+			Member next = members_itr.next();
+			if(next.getId() == id)
+				return next;
+		}
 		return null;
 	}
 
