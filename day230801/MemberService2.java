@@ -83,7 +83,6 @@ public class MemberService2
 					System.out.println(next);
 			}
 		}
-
 	}
 
 	public void printMembers()
@@ -94,6 +93,5 @@ public class MemberService2
 		else
 			while(members_itr.hasNext())
 				System.out.println(members_itr.next());
-
 	}
 }
