@@ -34,7 +34,6 @@ public class test
 			Arrays.sort(temp);
 			result[i] = temp[commands[i][2] - 1];
 		}
-
 		return result;
 	}
 }
