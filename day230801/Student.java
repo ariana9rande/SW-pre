@@ -1,6 +1,6 @@
 package day230801;
 
-public class Student implements Comparable<Student>
+public class Student //implements Comparable<Student>
 {
 	private String name;
 	private String tel;
@@ -31,15 +31,15 @@ public class Student implements Comparable<Student>
 		this.tel = tel;
 	}
 
-	@Override
-	public int compareTo(Student s)
-	{
-		return this.tel.compareTo(s.getTel());
-	}
+//	@Override
+//	public int compareTo(Student s)
+//	{
+//		return this.tel.compareTo(s.getTel());
+//	}
 	
-	@Override
-	public String toString()
-	{
-		return "이름 : " + name + " 전화번호 : " + tel;
-	}
+//	@Override
+//	public String toString()
+//	{
+//		return "이름 : " + name + " 전화번호 : " + tel;
+//	}
 }
