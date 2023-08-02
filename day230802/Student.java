@@ -1,10 +1,11 @@
-package day230801;
+package day230802;
 
 public class Student //implements Comparable<Student>
 {
 	private String name;
 	private String tel;
-
+	private String dept;
+	
 	public Student(String name, String tel)
 	{
 		this.name = name;
@@ -31,15 +32,28 @@ public class Student //implements Comparable<Student>
 		this.tel = tel;
 	}
 
+	public String getDept()
+	{
+		return dept;
+	}
+
+	public void setDept(String dept)
+	{
+		this.dept = dept;
+	}
+	
 //	@Override
 //	public int compareTo(Student s)
 //	{
 //		return this.tel.compareTo(s.getTel());
 //	}
 	
-//	@Override
-//	public String toString()
-//	{
-//		return "이름 : " + name + " 전화번호 : " + tel;
-//	}
+	@Override
+	public String toString()
+	{
+		if(dept != "")
+			return "(" + name + ", " + tel + ", " + dept + ")";
+		else
+			return "(" + name + ", " + tel + ")";
+	}
 }
