@@ -4,8 +4,7 @@ public class Student implements Comparable<Student>
 {
 	private String name;
 	private String tel;
-//	private String dept;
-	
+
 	public Student(String name, String tel)
 	{
 		this.name = name;
@@ -32,28 +31,30 @@ public class Student implements Comparable<Student>
 		this.tel = tel;
 	}
 
-//	public String getDept()
-//	{
-//		return dept;
-//	}
-//
-//	public void setDept(String dept)
-//	{
-//		this.dept = dept;
-//	}
-	
 	@Override
 	public int compareTo(Student s)
 	{
 		return this.name.compareTo(s.name) + this.tel.compareTo(s.tel);
 	}
-	
+
 	@Override
 	public String toString()
 	{
-//		if(dept != "")
-//			return "(" + name + ", " + tel + ", " + dept + ")";
-//		else
-			return "(" + name + ", " + tel + ")";
+		return "(" + name + ", " + tel + ")";
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return this.name.hashCode() + this.tel.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if(obj instanceof Student target)
+			if(name.equals(target.getName()) && tel.equals(target.getTel()))
+				return true;
+		return false;
 	}
 }

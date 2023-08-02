@@ -6,7 +6,7 @@ public class StudentApplication
 {
 	public static void main(String[] args)
 	{
-		StudentService studentService = new StudentService();
+		StudentService2 studentService = new StudentService2();
 		Scanner sc = new Scanner(System.in);
 		
 		boolean run = true;
@@ -22,21 +22,13 @@ public class StudentApplication
 			switch(menu)
 			{
 				case 1 ->
-				{
 					studentService.add();
-				}
 				case 2 ->
-				{
 					studentService.printStudent();
-				}
 				case 3 ->
-				{
 					studentService.delete();
-				}
 				case 4 ->
-				{
 					studentService.printStudents();
-				}
 				case 5 ->
 				{
 					run = false;
