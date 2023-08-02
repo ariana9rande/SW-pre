@@ -18,7 +18,7 @@ public class StudentService
 		System.out.print("전화번호 : ");
 		String tel = sc.nextLine();
 		
-		System.out.println("학과 : ");
+		System.out.print("학과 : ");
 		String dept = sc.nextLine();
 
 		Student newStudent = new Student(name, tel);
@@ -45,26 +45,40 @@ public class StudentService
 	{
 		System.out.print("조회할 이름 : ");
 		String name = sc.nextLine();
+		boolean check = false;
 
 		Set<Entry<Student, String>> studentSet = students.entrySet();
 		for(Entry<Student, String> student : studentSet)
 			if(student.getKey().getName().equals(name))
-				System.out.println(student.getKey());
-			else
-				System.out.println("해당 이름의 학생이 존재하지 않습니다.");
+			{
+				check = true;
+				System.out.println(student.getKey() + "-" + student.getValue());
+			}
+		if(!check)
+			System.out.println("해당 학생이 존재하지 않습니다.");
 	}
 
 	public void delete()
 	{
 		System.out.print("삭제할 이름 : ");
 		String name = sc.nextLine();
+		
+		System.out.print("전화번호 : ");
+		String tel = sc.nextLine();
+		
+		boolean check = false;
 
-		Set<Entry<String, String>> studentSet = students.entrySet();
-		for(Entry<String, String> student : studentSet)
-			if(student.getKey().equals(name))
-				System.out.println("(" + name + ", " + students.remove(name) + ") 삭제 완료.");
-			else
-				System.out.println("해당 이름의 학생이 존재하지 않습니다.");
+		Set<Entry<Student, String>> studentSet = students.entrySet();
+		for(Entry<Student, String> student : studentSet)
+			if(student.getKey().compareTo(new Student(name, tel)) == 0)
+			{
+				check = true;
+				System.out.println(student.getKey() + "-" + student.getValue() + " 삭제 완료.");
+				students.remove(student.getKey());
+				break;
+			}
+		if(!check)
+			System.out.println("해당 학생이 존재하지 않습니다.");
 	}
 
 	public void printStudents()
@@ -73,9 +87,9 @@ public class StudentService
 			System.out.println("학생이 존재하지 않습니다.");
 		else
 		{
-			Set<Entry<String, String>> studentSet = students.entrySet();
-			for(Entry<String, String> student : studentSet)
-				System.out.println("이름 : " + student.getKey() + " 전화번호 : " + student.getValue());
+			Set<Entry<Student, String>> studentSet = students.entrySet();
+			for(Entry<Student, String> student : studentSet)
+				System.out.println(student.getKey() + "-" + student.getValue());
 		}
 	}
 }
