@@ -47,7 +47,7 @@ public class JdbcMethod
 		System.out.println();
 		System.out.println(" ** student table 에서 데이터 삽입을 시작합니다. ** ");
 		Scanner sc = new Scanner(System.in);
-		String sql = "insert into student(id,name, dept) values(?, ?, ?)";
+		String sql = "insert into student(id, name, dept) values(?, ?, ?)";
 		PreparedStatement pstmt = null;
 
 		try

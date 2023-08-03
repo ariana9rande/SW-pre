@@ -1,0 +1,20 @@
+create table member
+(
+	member_id int auto_increment,
+    name varchar(20) not null,
+    password varchar(20) not null,
+    role varchar(10) not null,
+    book_id int,
+    primary key(member_id),
+    foreign key(book_id) references book(book_id)
+);
+    
+create table book
+(
+	book_id int auto_increment,
+    title varchar(50) not null,
+    author varchar(30) not null,
+    category int not null,
+    available boolean not null,
+    primary key(book_id)
+);
