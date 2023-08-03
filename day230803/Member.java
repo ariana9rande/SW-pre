@@ -9,6 +9,11 @@ public class Member
 	private Book book;
 	private boolean late;
 
+	public Member()
+	{
+		
+	}
+	
 	public Member(String memberName, String password, String role)
 	{
 		this.memberName = memberName;
