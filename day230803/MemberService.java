@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class MemberService
 {
+	Member currentMember = null;
 	Scanner sc = new Scanner(System.in);
 
 	public void register()
@@ -78,7 +79,6 @@ public class MemberService
 		String sql = "select * from member where name = ? and password = ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Member member = null;
 
 		try
 		{
@@ -97,13 +97,12 @@ public class MemberService
 			
 			while(rs.next())
 			{
-				member = new Member();
-				member.setMemberName(rs.getString("name"));
-				member.setPassword(rs.getString("password"));
-				member.setRole(rs.getString("role"));
+				currentMember = new Member();
+				currentMember.setMemberName(rs.getString("name"));
+				currentMember.setPassword(rs.getString("password"));
+				currentMember.setRole(rs.getString("role"));
 //				member.setBook(rs.getInt("book_id"));
-				member.setLate(false);
-				
+				currentMember.setLate(false);
 			}
 		}
 		catch(Exception e)
@@ -121,6 +120,6 @@ public class MemberService
 			{
 			}
 		}
-		return member;
+		return currentMember;
 	}
 }

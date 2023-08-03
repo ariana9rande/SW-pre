@@ -5,10 +5,12 @@ public class Book
 	private int bookId;
 	private String title;
 	private String author;
-	private int category;
+	private String category;
+	private String borrower;
+	private String checkOutDate;
 	private boolean available;
 
-	public Book(String title, String author, int category)
+	public Book(String title, String author, String category)
 	{
 		this.title = title;
 		this.author = author;
@@ -16,6 +18,18 @@ public class Book
 		this.available = true;
 	}
 	
+	public Book(int id, String title, String author, String category, String borrower, String checkOutDate,
+			boolean b)
+	{
+		this.bookId = id;
+		this.title = title;
+		this.author = author;
+		this.category = category;
+		this.borrower = borrower;
+		this.checkOutDate = checkOutDate;
+		this.available = b;
+	}
+
 	public int getBookId()
 	{
 		return bookId;
@@ -46,12 +60,12 @@ public class Book
 		this.author = author;
 	}
 
-	public int getCategory()
+	public String getCategory()
 	{
 		return category;
 	}
 
-	public void setCategory(int category)
+	public void setCategory(String category)
 	{
 		this.category = category;
 	}
