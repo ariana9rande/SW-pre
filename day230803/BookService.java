@@ -169,9 +169,11 @@ public class BookService
 			}
 			
 			rs = pstmt.executeQuery();
+			int cnt = 0;
 			
 			while(rs.next())
 			{
+				cnt++;
 				String id = rs.getString("book_id");
 				String title = rs.getString("title");
 				String author = rs.getString("author");
@@ -182,7 +184,7 @@ public class BookService
 			}
 
 //			int cnt = pstmt.executeUpdate();
-			System.out.println(rs.getRow() + "건이 검색됨");
+			System.out.println(cnt + "건이 검색됨");
 		}
 		catch(Exception e)
 		{
@@ -223,10 +225,11 @@ public class BookService
 		{
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			int cnt = rs.getRow();
+			int cnt = 0;
 			
 			while(rs.next())
 			{
+				cnt++;
 				String id = rs.getString("book_id");
 				String title = rs.getString("title");
 				String author = rs.getString("author");
@@ -235,7 +238,8 @@ public class BookService
 				System.out.println("id : " + id + ", 제목 : " + title + ", 저자 : " + author
 						+ ", 카테고리 : " + category + ", 대출가능 : " + available);
 			}
-
+			
+//			int cnt = rs.getRow();
 			System.out.println(cnt + "건이 검색됨");
 		}
 		catch(Exception e)

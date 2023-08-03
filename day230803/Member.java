@@ -9,6 +9,15 @@ public class Member
 	private Book book;
 	private boolean late;
 
+	public Member(String memberName, String password, String role)
+	{
+		this.memberName = memberName;
+		this.password = password;
+		this.role = role;
+		this.book = null;
+		this.late = false;
+	}
+	
 	public int getMemberId()
 	{
 		return memberId;
